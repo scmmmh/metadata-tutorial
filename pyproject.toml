@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "metadata-workshop"
+version = "0.1.0"
+description = ""
+authors = ["Mark Hall <mark.hall@work.room3b.eu>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+sphinx = "^3.1.2"
+ou-sphinx-theme = {path = "../ou-sphinx-theme"}
+
+[tool.poetry.dev-dependencies]
+pylint = "^2.5.3"
+sphinx-autobuild = "^0.7.1"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
