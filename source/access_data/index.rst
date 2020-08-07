@@ -1,5 +1,5 @@
 :layout: tutorial-iframe
-:iframe-src: http://localhost:8000/user/mhall/notebooks/Loading.ipynb
+:iframe-src: http://localhost:8888/notebooks/Loading.ipynb
 
 Loading Data
 ============
@@ -8,6 +8,10 @@ Loading Data
    :hidden:
 
    interface
+   oai_pmh/index
+   writing
+   europeana
+   local_data
 
 Loading data is (obviously) the first step in doing any kind of work with metadata.
 

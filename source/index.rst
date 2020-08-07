@@ -14,6 +14,7 @@ The tutorial does not have any pre-requisites, except that you must be prepared 
 .. toctree::
    :maxdepth: 2
    :includehidden:
+   :titlesonly:
 
    Load <access_data/index>
    Filter <filter_data/index>

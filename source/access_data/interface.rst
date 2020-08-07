@@ -1,4 +1,4 @@
-:iframe-src: http://localhost:8000/user/mhall/notebooks/Welcome.ipynb
+:iframe-src: http://localhost:8888/notebooks/Welcome.ipynb
 
 Interface
 =========
@@ -32,10 +32,10 @@ The Jupyter notebook on the right by default contains a single code cell. Into t
 
 .. sourcecode:: python
 
-    hello = 'Hello World'
+    hello = 'Metadata rule the world!'
     hello
 
-Then press ``Ctrl + Enter`` on your keyboard to run the code in the cell. You will see that in the output area below the code it will say :code:`'Hello World'`.
+Then press ``Ctrl + Enter`` on your keyboard to run the code in the cell (you can also click on the "Run" button in the toolbar). You will see that in the output area below the code it will say :code:`'Metadata rule the world!'`.
 
 Text cells
 ++++++++++
