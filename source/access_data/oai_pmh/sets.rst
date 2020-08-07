@@ -38,4 +38,16 @@ When you run this code, you are most likely going to get a ``KeyError``. This is
 
 When you run the cell, you will see that now you get ten titles output.
 
+The polymatheia library provides an alternative function for getting values from a record. Add a new cell to the end of the notebook with this code:
+
+.. sourcecode:: python
+
+    reader = OAIRecordReader('http://www.digizeitschriften.de/oai2/', max_records=10, metadata_prefix='mets', set_spec='EU')
+    for record in reader:
+        print(record.get(['metadata', '{http://www.loc.gov/METS/}mets', 'mets_dmdSec', 'mets_mdWrap', 'mets_xmlData', 'mods_mods', 'mods_titleInfo', 'mods_title', '_text']))
+
+The record comes with a :code:`get` function, which we can either pass a path as a single dotted string, or if, as in this case, one of the path elements contains a full-stop, a list of path elements. The :code:`get` function does one thing differently to just using the dot-notation. If a path element identifies a list (such as the ``'mets_dmdSec'`` element) and the next element is not a list index (``'mets_mdWrap``), then the :code:`get` function will apply the remainder of the path to each element in the list and return a list of values. If you run this cell, you will see that you now get 9 lists of titles and one single title.
+
+Which one of the two approaches you use depends on the specific scenario and whether you need to control whether a certain element is a list value or not.
+
 As OAI-PMH is not really meant for repeatedly fetching small structures, but rather at fetching everything and then working locally, the next step is to look at how to store things locally.
