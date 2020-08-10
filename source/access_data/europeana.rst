@@ -36,7 +36,7 @@ We can interact with a Europeana record in the same way as with an OAI-PMH one, 
 Complex Queries
 ---------------
 
-The full documentation of the Europeana query language can be found `here <https://pro.europeana.eu/page/search#basic-search>`_. In this tutorial we will just look at some of the basics. First, add a new cell with the following content:
+Europeana provides full `documentation of the Europeana query language <https://pro.europeana.eu/page/search#basic-search>`_. In this tutorial we will just look at some of the basics. First, add a new cell with the following content:
 
 .. sourcecode:: python
 
@@ -60,7 +60,7 @@ By default the search will run across all fields. To reduce the filter to a sing
     for record in reader:
         print(record.title)
 
-We cannot cover all the available fields here, but they can be found `here <https://pro.europeana.eu/page/search#result-fields-edm>`_.
+We cannot cover all the available fields here, instead look at the `Europeana documentation <https://pro.europeana.eu/page/search#result-fields-edm>`_.
 
 Result Profiles
 ---------------
@@ -93,3 +93,16 @@ Runnint this code will only return those records that are freely re-usable. This
     reader = EuropeanaSearchReader(EUROPEANA_API_KEY, 'title:Karl AND title:Gutzkow AND RIGHTS:"http://creativecommons.org/publicdomain/mark/1.0/"', reusability='open', max_records=1)
     for record in reader:
         print(record)
+
+Bigger Dataset
+--------------
+
+Before we move on, we will just fetch a second larger data-set to use for the rest of the tutorial. Add a new cell with the following code and run it:
+
+.. sourcecode:: python
+
+    reader = EuropeanaSearchReader(EUROPEANA_API_KEY, 'Gutzkow OR Zäunemann OR Heyse', profile='rich')
+    writer = LocalWriter('europeana_test', 'guid')
+    writer.write(reader)
+
+This will take a while to download all the data. When it has completed, you can move on to the next step in the tutorial.
