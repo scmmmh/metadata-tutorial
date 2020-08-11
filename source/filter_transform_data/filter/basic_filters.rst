@@ -28,7 +28,6 @@ The first thing we will try out is filtering records so that only the image reco
 
 .. sourcecode:: python
 
-    reader = LocalReader('europeana_test')
     fltr = ('eq', ['type'], 'IMAGE')
     images = RecordsFilter(reader, fltr)
     count = 0
@@ -48,7 +47,6 @@ Now let us try out the numerical comparison filters. Each Europeana record comes
 
 .. sourcecode:: python
 
-    reader = LocalReader('europeana_test')
     images = RecordsFilter(reader, ('gt', ['europeanaCompleteness'], 9))
     count = 0
     for record in images:
@@ -68,7 +66,6 @@ Finally we will look at filtering by language. Add the following code into a new
 
 .. sourcecode:: python
 
-    reader = LocalReader('europeana_test')
     images = RecordsFilter(reader, ('contains', ['dcLanguage'], 'ger'))
     count = 0
     for record in images:

@@ -1,12 +1,11 @@
 Filtering
 =========
 
-We shall start by looking at the filtering possibilities provided by P?olymatheia. Add a new cell with the following code and then run it:
+We shall start by looking at the filtering possibilities provided by Polymatheia. Add a new cell with the following code and then run it:
 
 .. sourcecode:: python
     :linenos:
 
-    reader = LocalReader('europeana_test')
     fltr = ('true',)
     filtered = RecordsFilter(reader, fltr)
     count = 0

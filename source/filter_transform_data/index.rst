@@ -14,6 +14,12 @@ Let's get started by adding a new cell to the new notebook on the right and runn
     from polymatheia.filter import RecordsFilter
     from polymatheia.transform import RecordsTransform
 
+Then add and run another cell to read in the data we will use for the filtering and transformation:
+
+.. sourcecode:: python
+
+    reader = LocalReader('europeana_test')
+
 While the tutorial will first look at filtering and then at transforming, in practice it is more common that these two steps are performed alternatingly and repeatedly in order to produce the final data-set for analysis.
 
 .. toctree::

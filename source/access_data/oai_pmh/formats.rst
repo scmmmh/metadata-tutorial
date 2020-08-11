@@ -1,11 +1,11 @@
 Metadata Formats
 ================
 
-The first step when accessing an OAI-PMH archive is to determine which metadata formats are available when you request the actual metadata records. The first step to doing this is to import the :code:`OAIMetadataReader` class into our notebook. To do this, add the following code into the first cell of the notebook:
+The first step when accessing an OAI-PMH archive is to determine which metadata formats are available when you request the actual metadata records. The first step to doing this is to import the :code:`OAIMetadataFormatReader` class into our notebook. To do this, add the following code into the first cell of the notebook:
 
 .. sourcecode:: python
 
-    from polymatheia.data.reader import OAIMetadataReader
+    from polymatheia.data.reader import OAIMetadataFormatReader
 
 Then run the cell. If you do not get an error, then this has worked perfectly. Otherwise check for typos and then re-run the cell.
 
@@ -18,7 +18,7 @@ Now that we have our reader class for the metadata we can use this to find out w
 .. sourcecode:: python
     :linenos:
 
-    reader = OAIMetadataReader('http://www.digizeitschriften.de/oai2/')
+    reader = OAIMetadataFormatReader('http://www.digizeitschriften.de/oai2/')
     for format in reader:
         print(format)
 
@@ -39,7 +39,7 @@ Now run the cell and the output should look something like this:
 
 Before we look at the output in a bit more detail, let us have a quick look at the code we use:
 
-* In line #1 we first create a new :code:`OAIMetadataReader` object with a single parameter, the base URL of the OAI-PMH endpoint. This new object is then assigned to the :code:`reader` variable. When we do this, the :code:`OAIMetadataReader` sends a request to the OAI-PMH server, which returns all available metadata formats. The :code:`OAIMetadataReader` then converts the response into a list of format objects.
+* In line #1 we first create a new :code:`OAIMetadataFormatReader` object with a single parameter, the base URL of the OAI-PMH endpoint. This new object is then assigned to the :code:`reader` variable. When we do this, the :code:`OAIMetadataFormatReader` sends a request to the OAI-PMH server, which returns all available metadata formats. The :code:`OAIMetadataFormatReader` then converts the response into a list of format objects.
 * In line #2 we use a "for" loop to loop over the list of format objects provided by the :code:`reader` object we created in the previous line.
 
   The "for" loop is one of the core concepts of programming. It allows us to apply a series of instructions to a list of things. In this case the things are the format objects provided by the :code:`reader`. In each iteration of the loop one format object is made available via the :code:`format` variable. Then the so-called body of the loop, which are those instructions that follow the :code:`for` line and are indented by at least 4 spaces. In our case there is only one instruction in the body of the loop, which is line #3. This line will be run once for each :code:`format` object provided by the :code:`reader`.
@@ -55,7 +55,7 @@ In practice we will only use the *metadataPrefix*, so let us try to output only 
 
 .. sourcecode:: python
 
-    reader = OAIMetadataReader('http://www.digizeitschriften.de/oai2/')
+    reader = OAIMetadataFormatReader('http://www.digizeitschriften.de/oai2/')
     for format in reader:
         print(format.metadataPrefix)
 
