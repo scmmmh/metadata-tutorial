@@ -47,9 +47,10 @@ Now let us try out the numerical comparison filters. Each Europeana record comes
 
 .. sourcecode:: python
 
-    images = RecordsFilter(reader, ('gt', ['europeanaCompleteness'], 9))
+    fltr = ('gt', ['europeanaCompleteness'], 9)
+    complete = RecordsFilter(reader, fltr)
     count = 0
-    for record in images:
+    for record in complete:
         count = count + 1
     print(count)
 
@@ -66,9 +67,10 @@ Finally we will look at filtering by language. Add the following code into a new
 
 .. sourcecode:: python
 
-    images = RecordsFilter(reader, ('contains', ['dcLanguage'], 'ger'))
+    fltr = ('contains', ['dcLanguage'], 'ger')
+    german = RecordsFilter(reader, fltr)
     count = 0
-    for record in images:
+    for record in german:
         count = count + 1
     print(count)
 
