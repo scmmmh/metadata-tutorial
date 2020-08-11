@@ -17,7 +17,6 @@ The tutorial does not have any pre-requisites, except that you must be prepared 
    :titlesonly:
 
    Load <access_data/index>
-   Filter <filter_data/index>
-   Transform <transform_data/index>
+   Filter & Transform <filter_transform_data/index>
    Analyse <analysis/index>
    Visualise <visualisation/index>
