@@ -1,7 +1,23 @@
+:layout: tutorial-iframe
+:iframe-src: http://localhost:8888/notebooks/Filter.ipynb
+
 Filtering
 =========
 
-We shall start by looking at the filtering possibilities provided by Polymatheia. Add a new cell with the following code and then run it:
+We shall start by looking at the filtering possibilities provided by Polymatheia. Let's get started by adding a new cell to the new notebook on the right and running the following code:
+
+.. sourcecode:: python
+
+    from polymatheia.data.reader import LocalReader
+    from polymatheia.filter import RecordsFilter
+
+Then add and run another cell to read in the data we will use for the filtering and transformation:
+
+.. sourcecode:: python
+
+    reader = LocalReader('europeana_test')
+
+Now that we have the basic infrastructure in place, add a new cell with the following code and then run it:
 
 .. sourcecode:: python
     :linenos:

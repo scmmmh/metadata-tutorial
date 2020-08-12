@@ -12,6 +12,7 @@ The basic filters provided by Polymatheia allow you to compare a value in a reco
 * :code:`('lt', a, b)`: Lets the record pass if the value of :code:`a` is less than the value of :code:`b`.
 * :code:`('lte', a, b)`: Lets the record pass if the value of :code:`a` is less than or equal to the value of :code:`b`.
 * :code:`('contains', a, b)`: Lets the record pass if the value of :code:`a` is contains the value of :code:`b`.
+* :code:`('exists', a)`: Lets the record pass if the value of :code:`a` is not :code:`None`.
 
 Where the filter expression contains :code:`a` and :code:`b`, either of these can be one of:
 
@@ -75,3 +76,17 @@ Finally we will look at filtering by language. Add the following code into a new
     print(count)
 
 If you run the cell, you will see that a total of 103 records is returned. However, as we will see in a moment, when we move on to complex filters, these are not all the German language records and we need to do a bit more work to see all of them.
+
+Sometimes at the filtering step we don't care what the value is, just that it is there. For that we can use the :code:`'exists'` filter. Add and run a new cell with the following code:
+
+.. sourcecode:: python
+
+    images_with_language = RecordsFilter(reader, ('exists', ['dcLanguage']))
+    count = 0
+    for record in images_with_language:
+        count = count + 1
+    print(count)
+
+You will see that it shows that 923 of the records have the dcLanguage attribute set.
+
+The advantage of the :code:`'exists'` filter is that for any further processing it is guaranteed that the "dcLanguage" value exists, making further processing much simpler.

@@ -24,7 +24,7 @@ For most of the basic filters, the :code:`'not'` filter is not needed, as they c
 If you run the cell, you will see that there are 414 records that do not have a "dcLanguage" of "de".
 
 OR filtering
-----------
+------------
 
 When we looked at filtering with the basic :code:`'contain'` filter, we noted that filtering by :code:`'de'` does not produce all German language records. This is because some are annotated with the three-letter language code :code:`'ger'`. Because the :code:`'contains'` filter only supports a single value, we need to use multiple :code:`'contains'` filters and then combine them using the :code:`'or'` filter. Add a new code cell with the following code:
 
