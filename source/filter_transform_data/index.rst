@@ -1,3 +1,5 @@
+:layout: tutorial-only-left
+
 Filtering & Transformation
 ==========================
 

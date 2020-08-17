@@ -18,5 +18,5 @@ The tutorial does not have any pre-requisites, except that you must be prepared 
 
    Load <access_data/index>
    Filter & Transform <filter_transform_data/index>
-   Analyse <analysis/index>
-   Visualise <visualisation/index>
+   Analyse & Visualise <analyse_visualise_data/index>
+   next/index
