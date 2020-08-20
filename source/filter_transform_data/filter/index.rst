@@ -1,5 +1,5 @@
 :layout: tutorial-iframe
-:iframe-src: http://localhost:8888/notebooks/Filter.ipynb
+:iframe-src: /notebooks/Filter.ipynb
 
 Filtering
 =========

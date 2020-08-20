@@ -1,5 +1,5 @@
 :layout: tutorial-iframe
-:iframe-src: http://localhost:8888/notebooks/Loading.ipynb
+:iframe-src: /notebooks/Loading.ipynb
 
 Loading Data
 ============

@@ -1,5 +1,5 @@
 :layout: tutorial-iframe
-:iframe-src: http://localhost:8888/notebooks/Visualisation.ipynb
+:iframe-src: /notebooks/Visualisation.ipynb
 
 Visualisation
 =============

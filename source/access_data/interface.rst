@@ -1,4 +1,4 @@
-:iframe-src: http://localhost:8888/notebooks/Welcome.ipynb
+:iframe-src: /notebooks/Welcome.ipynb
 
 Interface
 =========

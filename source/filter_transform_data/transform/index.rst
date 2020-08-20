@@ -1,5 +1,5 @@
 :layout: tutorial-iframe
-:iframe-src: http://localhost:8888/notebooks/Transform.ipynb
+:iframe-src: /notebooks/Transform.ipynb
 
 Transformation
 ==============
