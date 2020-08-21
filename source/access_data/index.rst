@@ -4,15 +4,6 @@
 Loading Data
 ============
 
-.. toctree::
-   :hidden:
-
-   interface
-   oai_pmh/index
-   writing
-   europeana
-   local_data
-
 Loading data is (obviously) the first step in doing any kind of work with metadata.
 
 .. note::
@@ -25,6 +16,15 @@ In this part of the tutorial we will look at fetching data from a number of sour
 * the Europeana API,
 * the local filesystem.
 
-We will also look at storing the retrieved data locally.
+We will also look at storing the retrieved data locally, which is necessary for performance and reproducibility reasons.
 
 However, first you will briefly be introduced to the tutorial interface on the next page.
+
+.. toctree::
+   :hidden:
+
+   interface
+   oai_pmh/index
+   writing
+   europeana
+   local_data

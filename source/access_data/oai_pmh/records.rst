@@ -16,8 +16,8 @@ Next, in a new cell at the bottom of the notebook add the following code:
         print(record)
 
 * Line #1 creates a new :code:`OAIRecordReader`, again passing the OAI-PMH endpoint URL as the first parameter. By default the :code:`OAIRecordReader` loads all records from the OAI-PMH server, which can be many thousand. We thus provide a second parameter :code:`max_records=1`, which tells the :code:`OAIRecordReader` to return at most 1 records.
-* Line #2 sets up a for loop to loop over all records provided by the :code:`OAIRecordReader`. In this case, this will only be one record, but you can change that parameter to return multiple records.
-* Line #3 prints the record
+* Line #2 sets up a for loop to loop over all records provided by the :code:`OAIRecordReader`. In this case, this will only be one record, but you can change that parameter in line #1 to return multiple records.
+* Line #3 prints the record. In practice this is where we would do more complex processing of each record.
 
 By default the :code:`OAIRecordReader` fetches the data in "oai_dc" format, which looks like this:
 
@@ -146,4 +146,6 @@ We can now increase the number of records to show, by increasing the :code:`max_
     for record in reader:
         print(record.metadata['{http://www.loc.gov/METS/}mets'].mets_dmdSec[0].mets_mdWrap.mets_xmlData.mods_mods.mods_titleInfo.mods_title._text)
 
-The next step is to look at limiting which data we fetch via the use of sets.
+If we remove the :code:`max_records` parameter, then the code would print out the titles of all records provided by the archive (which in this case would be about 1 million records).
+
+As most archives provide large numbers of records, in the ideal case we would fetch only a sub-set. While OAI-PMH does not provide fine-grained filtering methods, it does allow requesting sub-sets of the data and the next step is to look using those.
