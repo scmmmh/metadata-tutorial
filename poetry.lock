@@ -160,7 +160,7 @@ description = ""
 name = "ou-sphinx-theme"
 optional = false
 python-versions = ">=3.8,<4.0"
-version = "0.1.0"
+version = "0.2.0"
 
 [[package]]
 category = "main"
@@ -277,7 +277,7 @@ description = "Python documentation generator"
 name = "sphinx"
 optional = false
 python-versions = ">=3.5"
-version = "3.1.2"
+version = "3.2.1"
 
 [package.dependencies]
 Jinja2 = ">=2.3"
@@ -443,7 +443,7 @@ python-versions = "*"
 version = "1.12.1"
 
 [metadata]
-content-hash = "f99621139e66b81edf4e1d588d355af482e66128d098ccbc557309c88ec12fac"
+content-hash = "4057ad94170a07cfd25fac94f678c1fd7707e0637827585071746999f9fcafb5"
 lock-version = "1.0"
 python-versions = "^3.8"
 
@@ -562,8 +562,8 @@ mccabe = [
     {file = "mccabe-0.6.1.tar.gz", hash = "sha256:dd8d182285a0fe56bace7f45b5e7d1a6ebcbf524e8f3bd87eb0f125271b8831f"},
 ]
 ou-sphinx-theme = [
-    {file = "ou-sphinx-theme-0.1.0.tar.gz", hash = "sha256:4335316960c5358dd25d4df045a4aa53bccfb70974274c71d56fe9de4489e2c4"},
-    {file = "ou_sphinx_theme-0.1.0-py3-none-any.whl", hash = "sha256:e3b70f5643c9e29bd334129bf96e1ccdc5e02b9bf9a506999b6c8708bc9a15cd"},
+    {file = "ou-sphinx-theme-0.2.0.tar.gz", hash = "sha256:f85feebc58d18631126af78d76b1a4d9b4ca3f3d6fca129c5e63dd3279777478"},
+    {file = "ou_sphinx_theme-0.2.0-py3-none-any.whl", hash = "sha256:cc19cdbcb41403b3f30f6c9b586b18eb3830eb44bd284e84f3e97079ddebc2ad"},
 ]
 packaging = [
     {file = "packaging-20.4-py2.py3-none-any.whl", hash = "sha256:998416ba6962ae7fbd6596850b80e17859a5753ba17c32284f67bfff33784181"},
@@ -617,8 +617,8 @@ snowballstemmer = [
     {file = "snowballstemmer-2.0.0.tar.gz", hash = "sha256:df3bac3df4c2c01363f3dd2cfa78cce2840a79b9f1c2d2de9ce8d31683992f52"},
 ]
 sphinx = [
-    {file = "Sphinx-3.1.2-py3-none-any.whl", hash = "sha256:97dbf2e31fc5684bb805104b8ad34434ed70e6c588f6896991b2fdfd2bef8c00"},
-    {file = "Sphinx-3.1.2.tar.gz", hash = "sha256:b9daeb9b39aa1ffefc2809b43604109825300300b987a24f45976c001ba1a8fd"},
+    {file = "Sphinx-3.2.1-py3-none-any.whl", hash = "sha256:ce6fd7ff5b215af39e2fcd44d4a321f6694b4530b6f2b2109b64d120773faea0"},
+    {file = "Sphinx-3.2.1.tar.gz", hash = "sha256:321d6d9b16fa381a5306e5a0b76cd48ffbc588e6340059a729c6fdd66087e0e8"},
 ]
 sphinx-autobuild = [
     {file = "sphinx-autobuild-0.7.1.tar.gz", hash = "sha256:66388f81884666e3821edbe05dd53a0cfb68093873d17320d0610de8db28c74e"},
