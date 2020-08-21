@@ -1,0 +1,44 @@
+name: Deployment
+
+on:
+  push:
+    branches: [ default ]
+  pull_request:
+    branches: [ default ]
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Add .local path
+      run: |
+        echo "::add-path::$HOME/.local/bin"
+
+    - name: Install Base Dependencies
+      run: |
+        sudo apt-get install python3-venv pipx
+        pipx install poetry
+
+    - name: Install Dependencies
+      run: |
+        poetry config virtualenvs.in-project true
+        poetry install --no-dev
+
+    - name: Build the Tutorial
+      run: |
+        poetry config virtualenvs.in-project true
+        poetry run sphinx-build -b html source build
+
+    - name: Compress the Tutorial
+      run: |
+        cd build
+        tar -jcvf ../tutorial.tar.bz2 *
+
+    - name: Upload the Tutorial
+      run: |
+        curl -H "Authorization: bearer $AuthenticationToken" -T tutorial.tar.bz2 https://teaching.room3b.eu/ou_sar/metadata-workshop/tutorial
+      env:
+        AuthenticationToken: ${{ secrets.AuthenticationToken }}
