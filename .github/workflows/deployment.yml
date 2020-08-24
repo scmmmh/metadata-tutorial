@@ -30,8 +30,11 @@ jobs:
     - name: Build the Tutorial
       run: |
         poetry config virtualenvs.in-project true
-        poetry run sphinx-build -b latexpdf source build/latex
-        cp build/latex/metadataworkshop.pdf source/_static/
+        poetry run sphinx-build -b latex source build/latex
+        cd build/latex
+        latexmk
+        cp metadataworkshop.pdf ../../source/_static/
+        cd ../../
         poetry run sphinx-build -b html source build/html
 
     - name: Compress the Tutorial
