@@ -1,7 +1,7 @@
 Welcome to the DHd-AG-ZZ Metadata Workshop
 ==========================================
 
-This tutorial was developed for the DHd Working Group on Newspapers and Periodicals' Metadata Workshop 2020.
+This tutorial was developed for the DHd Working Group on Newspapers and Periodicals' Metadata Workshop 2020 and is also available as a :download:`PDF <_static/metadataworkshop.pdf>`.
 
 It will introduce you to the basics of loading metadata, filtering out unwanted metadata, transforming the metadata into the required structure, and then analysing and visualising the final metadata. You will also be introduced to the (very) basics of programming with Python.
 
