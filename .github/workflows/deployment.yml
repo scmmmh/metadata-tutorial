@@ -19,7 +19,7 @@ jobs:
 
     - name: Install Base Dependencies
       run: |
-        sudo apt-get install python3-venv pipx
+        sudo apt-get install python3-venv pipx latexmk
         pipx install poetry
 
     - name: Install Dependencies
