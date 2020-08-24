@@ -18,7 +18,7 @@ When analysing a data-set the first step should always be to generate some basic
 
 Two additions here that we have not used previously are the :code:`Counter` and the :code:`PandasDFWriter`. The :code:`PandasDFWriter` is used first to transform the source metadata records into the Pandas :code:`DataFrame` structure needed for all further analysis. The :code:`Counter` will be used later to determine frequencies.
 
-First add the following code into a new cell:
+First add the following code into a new cell and run it:
 
 .. sourcecode:: python
 
@@ -30,7 +30,7 @@ First add the following code into a new cell:
     transformed = RecordsTransform(reader, mapping)
     df = PandasDFWriter().write(transformed)
 
-The addition to what we have covered previously is line \#6, where we create a new :code:`PandasDFWriter` and then use its :code:`write` method to convert the :code:`transformed` records into a Pandas :code:`DataFrame`.
+The addition to what we have covered previously is line \#6, where we create a new :code:`PandasDFWriter` and then use its :code:`write` method to convert the :code:`transformed` records into a Pandas :code:`DataFrame`, which we store in the :code:`df` variable.
 
 This will not have output anything, unless there is an error somewhere. Add and run the following code in a new cell:
 
@@ -51,7 +51,7 @@ We will first generate some summary information about categorical data, looking 
 
 When you run it, you will see that it prints out a long list of all "lang" values, together with how often they occur. Looking at the data, there are some interesting things you can see immediately. First of all, while we have previously treated "de" and "ger" as German-language codes, there is also "deu" and "Deutsch". Second, the second-most-frequent category is "mul", which stands for "multiple", indicating that there are multiple languages, but not specifying which ones they are.
 
-Looking at the data, we can see a few more filters that we could apply. We probably want to filter those where the language is set to multiple and those that have no language at all. We would probably also want to combine the various language values that all refer to the same language. Finally we would filter out those languages that have less than 10 occurrences. However, before we modify the data any more, it is worth looking at the other columns as well, before we make any decisions.
+Looking at the data, we can see a few more filters that we could apply. We probably want to filter those where the language is set to multiple and those that have no language at all. We would probably also want to combine the various language values that all refer to the same language. Finally we would like to filter out those languages that have less than 10 occurrences. However, before we modify the data any more, it is worth looking at the other columns as well, before we make any decisions.
 
 Numeric data
 ------------
@@ -82,4 +82,4 @@ If you look at the output, you will see that the mean is about 2 words longer th
 
     df['title_tokens'].describe(percentiles=[0.25, 0.5, 0.75, 0.95])
 
-You can now see that 95% of all titles have 29 or less words. We thus only loose 5% of the data, if we remove all with a length of 30 or greater.
+You can now see that 95% of all titles have 29 or less words. If we filter out anything with more than 29 words, we will loose 5% of the data, but at the same time any analysis is less influenced by the outliers.

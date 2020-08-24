@@ -1,7 +1,7 @@
 Loading data from Europeana
 ===========================
 
-We will now look at a second data-source: `Europeana`_. Europeana comes with its own metadata schema and a custom API (application programming interface), as we will see in a moment. In order to use the API you need to have an API Key, which you need to apply for `here <https://pro.europeana.eu/page/get-api>`_ before we continue.
+We will now look at a second remote data-source: `Europeana`_. Europeana is the European aggregator for cultural heritage data and comes with its own metadata schema and a custom API (application programming interface) for accessing the data. In order to use the API you need to have an API Key, which you need to apply for `here <https://pro.europeana.eu/page/get-api>`_ before we continue.
 
 .. _`Europeana`: https://www.europeana.eu
 
@@ -20,7 +20,7 @@ Next, add a cell at the end of the notebook and add the following code:
     for record in reader:
         print(record)
 
-Copy your Europeana API Key between the :code:`''` string markers. Then run the cell. If everything works, you will see a single record output. We don't have time to go through all the fields in detail here, but you can find a description of all the fields in the `Europeana Search API documentation <https://pro.europeana.eu/page/search#result-fields-edm>`_.
+Copy your Europeana API Key between the :code:`''` string markers in the first line. Then run the cell. If everything works, you will see a single record output. We don't have time to go through all the fields in detail here, but you can find a description of all the fields in the `Europeana Search API documentation <https://pro.europeana.eu/page/search#result-fields-edm>`_.
 
 Creating a new :code:`EuropeanaSearchReader` always requires at least two parameters. The first is the Europeana API key and the second is the search query. In our first example we simply search for the string "Python". If you want, you can try replacing that with a different value and seeing what the results are like.
 
@@ -44,7 +44,7 @@ Europeana provides full `documentation of the Europeana query language <https://
     for record in reader:
         print(record.title)
 
-Using the double quotes ensures that the results contain the text as it is. If you want to allow for a bit more flexibility, you can use the following code:
+Using the double quotes ensures that the results contain the text as it is. If you want to have all the keywords in your results, but are prepared to allow for extra text between them, try the following code in a new cell:
 
 .. sourcecode:: python
 
@@ -52,7 +52,7 @@ Using the double quotes ensures that the results contain the text as it is. If y
     for record in reader:
         print(record.title)
 
-By default the search will run across all fields. To reduce the filter to a single field, specify it in the query:
+By default the search will run across all fields. To search only within a single field, you can specify the field in the search query. Try this code in a new cell:
 
 .. sourcecode:: python
 
@@ -65,7 +65,7 @@ We cannot cover all the available fields here, instead look at the `Europeana do
 Result Profiles
 ---------------
 
-The Europeana Search API can provide different `levels of detail <https://pro.europeana.eu/page/search#profiles>`_ in the results. By default it provides the "standard" result profile and for determining what query to use to find the data-set one is interested in, it is ideal. However, when downloading the data for further processing, the "rich" profile is generally better, as it provides the maximum level of detail:
+The Europeana Search API provides different `levels of detail <https://pro.europeana.eu/page/search#profiles>`_ in the results. By default it provides the "standard" result profile and for determining what query to use to find the data-set one is interested in, it is ideal. However, when downloading the data for further processing, the "rich" profile is generally better, as it provides the maximum level of detail. Run the following in a new cell:
 
 .. sourcecode:: python
 
@@ -73,12 +73,16 @@ The Europeana Search API can provide different `levels of detail <https://pro.eu
     for record in reader:
         print(record)
 
-When you run the cell, you will see that it now contains more metadata.
+If you compare the output to the output from the previous cell, you will see the additional data that is provided.
+
+.. note::
+
+   It is important to note that the profile level specifies the maximum level of detail. If a record does not have any values for a field, then that field will not be contained within the response.
 
 Reusability
 -----------
 
-All records in the Europeana archive are provided with rights information, detailing what `use is possible <https://pro.europeana.eu/page/search#reusability>`_. To restrict the results to, for example, those where any kind of re-use is possible, we use the :code:`reusability` parameter in a new cell:
+All records in the Europeana archive are provided with rights information, specifying what `use is allowed <https://pro.europeana.eu/page/search#reusability>`_. To restrict the results to, for example, those where any kind of re-use is possible, we use the :code:`reusability` parameter. Run the following code in a new cell:
 
 .. sourcecode:: python
 
@@ -86,7 +90,7 @@ All records in the Europeana archive are provided with rights information, detai
     for record in reader:
         print(record)
 
-Runnint this code will only return those records that are freely re-usable. This includes public domain works, and CreativeCommons Attribution and Attribution-ShareAlike works. If you want to narrow it down more specifically, you need to filter in the query:
+Running this code will only return those records that are freely re-usable. This includes public domain works, and CreativeCommons Attribution and Attribution-ShareAlike works. If you want to narrow it down more specifically, you need to filter in the query:
 
 .. sourcecode:: python
 
@@ -105,4 +109,4 @@ Before we move on, we will just fetch a second larger data-set to use for the re
     writer = LocalWriter('europeana_test', 'guid')
     writer.write(reader)
 
-This will take a while to download all the data. When it has completed, you can move on to the next step in the tutorial.
+As you can see the code is very similar to the code we used for saving the OAI-PMH data. The difference is only the name of the directory to store the data in and the path for the unique identifier which for Europeana is the "guid" field. This will take a while to download all the data. When it has completed, you can move on to the next step in the tutorial.

@@ -81,4 +81,8 @@ When we write more complex filters, such as this one, it is generally a good ide
 
     fltr = ('and', ('or', ('contains', ['dcLanguage'], 'de'), ('contains', ['dcLanguage'], 'ger')), ('eq', ['type'], 'IMAGE'))
 
-It is important to remember that code that you wrote, but haven't looked at for two weeks is as readable as code that somebody else wrote. Thus it is imperative to cleanly structure your code and provide comments as well, so that you can remember what you were thinking.
+The difference in readability is clear and applies to all other code as well. Remember to also add notes to your notebooks to document what you have done.
+
+.. important::
+
+   Experience from software development shows that code you wrote yourselv, but haven't looked at for two weeks is as readable and understandable as code that somebody else wrote. Thus it is imperative to cleanly structure your code and provide comments as well, so that you can remember what you were thinking.

@@ -10,7 +10,7 @@ The second test we will look at is the :math:`\chi^2` (chi-square) test. This te
         print(lang)
         print(Counter(df[df['lang'] == lang]['type']).most_common())
 
-You are already familiar with most of the concepts here. In line \#1 we loop through a list with the language codes. In each iteration the :code:`lang` variable will hold on language code, which we print out in line \#2. In line \#3 we first create a filter mask comparing the "lang" column to our :code:`lang` variable, then we apply that filter to the DataFrame, select the "type" column, pass that into a :code:`Counter` and print out the :code:`most_common()` values. The result will look like this:
+You are already familiar with most of the concepts here. In line \#1 we loop through a list with the language codes. In each iteration the :code:`lang` variable will hold one language code, which we print out in line \#2. In line \#3 we first create a filter mask comparing the "lang" column to our :code:`lang` variable, then we apply that filter to the DataFrame, select the "type" column, pass that into a :code:`Counter` and print out the :code:`most_common()` values. The result will look like this:
 
 .. sourcecode::
 
@@ -58,6 +58,6 @@ The result will look something like this:
 
 The first value is the :math:`\chi^2` statistic, the second value the *p-value*, the third the degrees of freedom, and the fourth a representation of the expected frequencies that the test used to determine whether there was any significant differences. A *p-value* of 0.98 indicates that there is no significant link between the type and language of the record.
 
-To see how the :math:`\chi^2` behaves with different values, try changing and re-running the cell where we defined our new DataFrame. Then re-run the test. See how much you need to change the values to make the differences statistically significant.
+To see how the :math:`\chi^2` behaves with different values, try changing the values and re-running the cell where we defined our new :code:`DataFrame`. Then re-run the test. See how much you need to change the values to make the differences statistically significant.
 
 The nice thing about the :math:`\chi^2` test is that you can feed in multiple values in both the rows and columns. However, the resulting *p-value* will only tell you whether there is any significant difference somewhere in the contingency table, not where it is. To determine that, you then need to create multiple contingency tables for each pair of two rows and run the :math:`\chi^2` test on each one. That will tell you where significant differences exist.

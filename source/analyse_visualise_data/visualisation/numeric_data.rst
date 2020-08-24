@@ -18,7 +18,7 @@ The :code:`distplot` merges two plots into a single one. The bars are a histogra
 
 Here we use the :code:`range` function to create a list of values from 0 to the maximum value in "title_tokens", with a step size of 1 (:code:`[0, 1, 2, 3, ... n]`). Try running the code to see how the plot compares. Then in a new cell, run the same code, but with a step size of 2 and compare the resulting diagrams. You can see that by increasing the step size, we are essentially smoothing the individual values.
 
-The second part of the diagram is the line which represents a density estimate. Essentially it shows the same as the histogram, but smoothened out even more. The density estimate is calculated as a weighted sum of the values within a certain distance from the current value. That means that values that are further away from the current value are down-weighted, while closer values are given a higher weight. This is also the reason that the curve continues below 0, as there are still values within the density function's range, whose influence slowly reduces until the density estimate hits 0.
+The second part of the diagram is the line which represents a density estimate. Essentially it shows the same as the histogram, but smoothened out even more. The density estimate is calculated as a weighted sum of the values within a certain distance from the current value. That means that values that are further away from the current value are down-weighted, while closer values are given a higher weight. This is also the reason that the curve continues below 0 (even though that makes no sense), as there are still values within the density function's range whose influence slowly reduces until the density estimate hits 0.
 
 Looking at this kind of diagram is a good way to develop an understanding of how the data looks, but any kind of interpretation is exactly that. To draw conclusions you should go back to the statistical analysis.
 
@@ -33,13 +33,13 @@ Sometimes you will want to see how two variables are distributed at the same tim
 
 This code-example also shows how most plots are generated in Seaborn. You specify the DataFrame to visualise via the :code:`data` parameter and then the columns to plot along the :code:`x` and :code:`y` axes using the respective parameters to specify the column names.
 
-One of the limitations of the scatterplot is that where multiple records have the same pair of values, a single point is shown. To get a bit of an insight into this, we can add histograms on the outside of the plot with the following code:
+One of the limitations of the scatterplot is that where multiple records have the same pair of values, a single point is shown, giving no indication of how many values might be there. To get a bit of an insight into this, we can add histograms on the outside of the plot with the following code:
 
 .. sourcecode:: python
 
     seaborn.jointplot(x='title_tokens', y='completeness', data=df)
 
-Better, but still not that helpful. Instead, let us use a two-dimensional density estimate plot. Run the following in a new cell:
+By taking into account both plots at the same time, we can see where there are more or less values. We can also visualise this another way, using a two-dimensional density estimate plot. Run the following in a new cell:
 
 .. sourcecode:: python
 
@@ -70,7 +70,7 @@ One thing we can do with the :code:`boxplot` is to use it to visualise differenc
 
 .. sourcecode:: python
 
-    seaborn.boxplot(y='title_tokens', x='lang', data=df, notches=True)
+    seaborn.boxplot(y='title_tokens', x='lang', data=df)
 
 Violinplots
 -----------

@@ -26,5 +26,5 @@ However, first you will briefly be introduced to the tutorial interface on the n
    interface
    oai_pmh/index
    writing
-   europeana
    local_data
+   europeana

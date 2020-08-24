@@ -4,7 +4,7 @@
 Further Filtering
 =================
 
-We have now identified a number of additional filters and transforms we wish to apply to our data-set:
+In the basic statistical analysis we identified a number of additional filters and transforms we wish to apply to our data-set:
 
 * Remove all rows with multiple languages or no language
 * Merge language codes
@@ -40,19 +40,19 @@ Then add and run a cell with the following code:
     filtered = RecordsFilter(transformed, fltr)
     df = PandasDFWriter().write(filtered)
 
-As you can see, we have added a :code:`RecordsFilter` that requires that there is a language, the languages is not multiple languages, and the number of title tokens is less than 30. Let us see what effect this has by adding and running another cell with the following code:
+As you can see, we first re-use the transformation we previously developed (lines #2-#7). Next, we pass the transformation into a filter that requires that each record has a language, the language is not "multiple languages", and the number of title tokens is less than 30. The transformed and filtered data is then stored in a :code:`DataFrame` via the :code:`PandasDFWriter`. Let us see what effect this has by adding and running another cell with the following code:
 
 .. sourcecode:: python
 
     df
 
-You will see that this filters the data-set down to 767 rows (75%). The next step is to merge the languages. To do that, we need a full list of languages used. Add and run a new cell with the following code:
+You will see that this filters the data-set down to 767 rows (which is about 75% of the original data-set). The next step is to merge the languages. To do that, we need a full list of languages used. Add and run a new cell with the following code:
 
 .. sourcecode:: python
 
     Counter(df['lang']).most_common()
 
-We will use the two-letter codes, meaning we need to find mappings for "ger", "und", "deu", "fre", "Deutsch", "pol", "cat", "swe", "lat", "hun", "zxx", and "ita". Of these "zxx" actually means that the record has no linguistic content, so we don't need to map, but we do need to filter that. Similarly "und" means "undefined", which we should also get rid of. Update the code in the read/transform/filter cell to look like this:
+We will use the two-letter codes, meaning we need to find mappings for "ger", "und", "deu", "fre", "Deutsch", "pol", "cat", "swe", "lat", "hun", "zxx", and "ita". Of these "zxx" actually means that the record has no linguistic content, so we don't need to map that, but we do need to filter it. Similarly "und" means "undefined", which we should also get rid of. Update the code in the read/transform/filter cell to look like this:
 
 .. sourcecode:: python
     :linenos:
@@ -92,11 +92,11 @@ We will use the two-letter codes, meaning we need to find mappings for "ger", "u
     filtered = RecordsFilter(transformed, fltr)
     df = PandasDFWriter().write(filtered)
 
-The big change is the new function we have defined in lines \#1-\#18. When we looked at custom transforms, we used lambda functions, but it is also possible to use a full function in a custom transform. Just as with the lambda function, the full function takes a single parameter, which is the record to transform. Inside our function we have a list of :code:`if` statements. An :code:`if` statement is a control structur that tells the computer that if a given condition is :code:`True`, then run the code that is in the :code:`if` body (in Python indicated through indentation). If the condition is not :code:`True`, skip the body. The :code:`elif` is an extension of that which you should read as "if the previous :code:`if` condition was not :code:`True` and this :code:`if` statement's condition is :code:`True`, then run the nested block". If the language does not match any of the specific language codes we check, then we simply return the existing language value.
+The big change is the new function we have defined in lines \#1-\#18. When we first looked at custom transforms, we used lambda functions, but it is also possible to use a full function in a custom transform. Just as with the lambda function, the full function takes a single parameter, which is the record to transform. Inside our function we have a series of :code:`if` statements. An :code:`if` statement is a control structure that tells the computer that if a given condition is :code:`True`, then run the code that is in the :code:`if` body (in Python indicated through indentation). If the condition is not :code:`True`, skip the body. The :code:`elif` is an extension of that which you should read as "if the previous :code:`if` condition was not :code:`True` and this :code:`if` statement's condition is :code:`True`, then run the nested block". If the language does not match any of the specific language codes we check, then we simply return the existing language value.
 
 We use our :code:`map_language` function in the :code:`mapping`, running the language :code:`'copy'` and then our :code:`'custom'` transform in sequence. Additionally in the :code:`fltr` we have filtered out the "zxx" and "und" language codes.
 
-Run the cell and then run the :code:`df` cell as well. You will see that now our dataframe has 754 rows, indicating that the unneeded language codes have been filtered out. However, we will still have some language codes that occur only very infrequently.
+Run the cell and then run the :code:`df` cell as well. You will see that now our dataframe has 754 rows, indicating that the additional unneeded language codes have been filtered out. However, we will still have some language codes that occur only very infrequently.
 
 To filter those out, first run the :code:`Counter(df['lang']).most_common()` cell again and look at the output. The languages "sv", "la", "da", "ca", "nl", "es", "it", "en", and "et" all have less than 10 occurences, so should be filtered. Update the load/transform/filter cell to look like this:
 
@@ -145,13 +145,13 @@ To filter those out, first run the :code:`Counter(df['lang']).most_common()` cel
     filtered = RecordsFilter(transformed, fltr)
     df = PandasDFWriter().write(filtered)
 
-If you run the cell again and also re-run the :code:`df` cell, then you will see that we have now reduced the size of our analysis data-set to 721 rows. We can also see the effect this filtering has had on the number of tokens in the tiles by adding a new cell with the following code:
+If you run the cell again and also re-run the :code:`df` cell, then you will see that we have now reduced the size of our analysis data-set to 721 rows (about 71% of the original data-set). We can also see the effect this filtering has had on the number of tokens in the tiles by adding a new cell with the following code:
 
 .. sourcecode:: python
 
     df['title_tokens'].describe()
 
-As you can see in the output, the mean length has reduced by 2 and the median by 1.
+As you can see in the output, the mean length has reduced by 2 and the median by 1, bringing them much closer together, indicating that the data-set is now more cohesive. We can now move on to applying some comparative statistics to our cleaned data-set.
 
 .. important::
 

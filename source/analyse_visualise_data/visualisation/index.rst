@@ -4,7 +4,7 @@
 Visualisation
 =============
 
-Visualisations are a useful method for making information and results more accessible. However, it is important to note that visualisations are also always reductions, simplifications, and distortions of the underlying data and should only be used as illustration, not as proof of anything.
+Visualisations are a useful method for making information and results more accessible. However, it is important to note that visualisations are also **always** reductions, simplifications, and distortions of the underlying data and should only be used as illustration, not as proof of anything.
 
 To get started, add the following code into the notebook and run it:
 

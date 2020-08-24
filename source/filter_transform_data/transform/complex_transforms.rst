@@ -1,7 +1,7 @@
 Complex Transformations
 =======================
 
-The basic transformations are useful, but to actually construct a more complete transformed record, we need to apply multiple transformations to the same record, and possibly further transform the result.
+The basic transformations are useful, but to actually construct a more complete transformed record, we generally need to apply multiple transformations to the same record, and then possibly further transform the result.
 
 Parallel transformation
 -----------------------
@@ -19,7 +19,9 @@ First we will look at the :code:`'parallel'` transformation, which allows us to 
     for record in transformed:
         print(record)
 
-As you can see, the :code:`'parallel'` transformation contains four nested basic transformations and if you run the code, you will see that each result record now has four values.
+As you can see, the :code:`'parallel'` transformation contains four nested basic transformations, two copy, one join, and a custom transformation. As you can see, at this point the number of nested round brackets is quite large and if you wanted to add something, it can be tricky to see where to do so. However, the notebook provides some help. If you place the cursor just behind a bracket, then it will highlight both the opening and closing bracket.
+
+If you run the cell, you will see that each result record now has four values.
 
 Sequential transformation
 -------------------------
@@ -35,7 +37,7 @@ If you go back to the output of the basic :code:`('copy', 'lang', 'dcLanguage[0]
     for record in transformed:
         print(record)
 
-You can see that the :code:`'sequence'` filter is defined like the :code:`'parallel'` filters. The difference is that the output of the first transformation is passed as the input to the second transformation (and so on, if you have more transformations in sequence). Here we use the value :code:`'NA'` as the default value to use where there is no :code:`'lang'` value.
+You can see that the :code:`'sequence'` filter is defined like the :code:`'parallel'` filters. The difference is that the output of the first transformation is passed as the input to the second transformation (and so on, if you have more transformations in sequence). Here we use the value :code:`'NA'` as the default value to use where there is no :code:`'lang'` value. If you run the cell, you will see that it now contains a mix of language values and :code:`'NA'` values.
 
 Complex transformations
 -----------------------

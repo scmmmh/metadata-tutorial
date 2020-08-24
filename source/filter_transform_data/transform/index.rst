@@ -4,7 +4,7 @@
 Transformation
 ==============
 
-For the analysis and visualisation the data generally needs to be in a tabular format. As we have seen, this is generally not the case for the source metadata. However, even if the source metadata is already tabular, it is often useful to transform it into a simpler form for the analysis.
+For the analysis and visualisation the data generally need to be in a tabular format. As we have seen, this is generally not the case for the source metadata. However, even if the source metadata is already tabular, it is often useful to transform it into a simpler form for the analysis.
 
 We will first look at some :doc:`basic_transforms` and then :doc:`complex_transforms`.
 

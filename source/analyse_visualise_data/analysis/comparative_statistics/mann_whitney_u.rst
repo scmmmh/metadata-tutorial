@@ -32,7 +32,7 @@ You can see that the four expressions are all the same, except for the varying l
 
       df[df['lang'] == 'de']
 
-  This will create a new DataFrame, which only includes those rows where the filter mask is :code:`True`, but still includes all columns
+  This will create a new DataFrame, which only includes those rows where the filter mask is :code:`True`, but still includes all columns.
 
 * Finally, we select only the "title_tokens" column from our filtered DataFrame:
 

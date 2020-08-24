@@ -1,7 +1,7 @@
 Basic Filters
 =============
 
-The basic filters provided by Polymatheia allow you to compare a value in a record to a fixed value. We have already seen the simplest basic filter, the :code:`'true'` filter. The following basic filters are provided:
+The basic filters provided by Polymatheia allow you to compare a value in a record to a fixed value. We have already seen the simplest basic filter, the :code:`'true'` filter. Polymatheia provides the following basic filters:
 
 * :code:`('true',)`: Lets any record pass.
 * :code:`('false',)`: Lets no record pass.
@@ -37,9 +37,9 @@ The first thing we will try out is filtering records so that only the image reco
         print(record.type)
     print(count)
 
-If you look at the code, the only interesting change in the code is the definition of the :code:`fltr` variable, which here is defined as an equal filter. We use the list format to specify the field to fetch from the record for comparison, because if we just used the string notation, there would be no "." in the string, and it would not be recognised as a dotted path.
+If you look at the code, the only interesting change is the definition of the :code:`fltr` variable, which here is defined as an equal filter. We use the list format to specify the field to fetch from the record for comparison, because if we just used the string notation, there would be no "." in the string, and it would not be recognised as a dotted path.
 
-If you run the cell, you will see that now we only get 101 image records. We could also flip this around to show anything but the image records, by replacing the :code:`'eq'` with :code:`'neq'` in the filter. Try it out and see what the result looks like.
+If you run the cell, you will see that we now get 101 image records. We could also flip this around to show anything but the image records, by replacing the :code:`'eq'` with :code:`'neq'` in the filter. Try it out and see what the result looks like.
 
 Filtering by completeness
 -------------------------
@@ -75,15 +75,15 @@ Finally we will look at filtering by language. Add the following code into a new
         count = count + 1
     print(count)
 
-If you run the cell, you will see that a total of 103 records is returned. However, as we will see in a moment, when we move on to complex filters, these are not all the German language records and we need to do a bit more work to see all of them.
+If you run the cell, you will see that a total of 103 records are returned. However, as we will see in a moment, when we move on to complex filters, these are not all the German language records and we need to do a bit more work to see all of them.
 
 Sometimes at the filtering step we don't care what the value is, just that it is there. For that we can use the :code:`'exists'` filter. Add and run a new cell with the following code:
 
 .. sourcecode:: python
 
-    images_with_language = RecordsFilter(reader, ('exists', ['dcLanguage']))
+    with_language = RecordsFilter(reader, ('exists', ['dcLanguage']))
     count = 0
-    for record in images_with_language:
+    for record in with_language:
         count = count + 1
     print(count)
 

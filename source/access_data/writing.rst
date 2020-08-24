@@ -3,13 +3,13 @@ Storing data locally
 
 Fetching data remotely is a comparatively slow process, so in practice it is better to fetch the data once and store it locally.
 
-First, we need to import the :code:`LocalWriter` class into the first cell of the notebook and re-run the cell:
+To do that we first need to import the :code:`LocalWriter` class into the first cell of the notebook and re-run the cell:
 
 .. sourcecode:: python
 
     from polymatheia.data.writer import LocalWriter
 
-Next, add a new cell to the end of the notebook and add the following content and run the cell:
+The :code:`LocalWriter` requires a unique identifier for each record, which it then uses to structure how the data is stored locally. Since we are dealing with OAI-PMH data at the moment, this information is best found in the header. Add and run the following code in a new cell:
 
 .. sourcecode:: python
 
@@ -38,7 +38,7 @@ Lets have a look at that new elements in the code:
 * Line #2 creates a new :code:`LocalWriter` in the :code:`writer` variable, which takes two parameters. The first is the name of the directory into which to store the data. The second is the dotted path used to access the identifier value.
 * Line #3 instructs the :code:`writer` to write all the records returned by the :code:`reader`.
 
-If you run the cell, this will take a few seconds and if everything worked, it will produce no visible output. You can, however, see that it is working by the "[*]" indicator to the left of the cell.
+If you run the cell, this will take a few seconds and if everything worked, it will produce no visible output. You can, however, see that it is working by the "[*]" indicator on the left side of the cell. The :code:`LocalWriter` saves each record as a JSON (JavaScript Object Notation) file on the local filesystem and on the next page of the tutorial we will look at loading this data gain.
 
 Let us now fetch a slightly larger dataset that we can then work with. Update the cell, increasing the ``max_records`` to 1000 and re-run the cell:
 
@@ -48,4 +48,8 @@ Let us now fetch a slightly larger dataset that we can then work with. Update th
     writer = LocalWriter('digiz_eu', 'header.identifier._text')
     writer.write(reader)
 
-This will take a while.
+This will take a while, so this is probably a good time to take a short break.
+
+.. note::
+
+   The code here writes OAI-PMH records to the local disk. However, the :code:`LocalWriter` does not actually care about the type of records it writes and will work just as well with data read from any of the other data-sources that Polymatheia provides.
