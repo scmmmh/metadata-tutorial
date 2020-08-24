@@ -19,7 +19,7 @@ jobs:
 
     - name: Install Base Dependencies
       run: |
-        sudo apt-get install python3-venv pipx latexmk
+        sudo apt-get install python3-venv pipx latexmk texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra
         pipx install poetry
 
     - name: Install Dependencies
