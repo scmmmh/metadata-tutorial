@@ -159,7 +159,7 @@ description = ""
 name = "ou-sphinx-theme"
 optional = false
 python-versions = ">=3.8,<4.0"
-version = "0.4.0"
+version = "0.4.1"
 
 [[package]]
 category = "main"
@@ -442,7 +442,7 @@ python-versions = "*"
 version = "1.12.1"
 
 [metadata]
-content-hash = "2995cc6550e2fc9cf874ec82445a9b98a91f4055c2fcdd746a46a9f426aaccba"
+content-hash = "c6d5572efffd5a33fcf0c7e70cf08d83950aab808562eed16a87b6b09c61a272"
 lock-version = "1.0"
 python-versions = "^3.8"
 
@@ -561,8 +561,8 @@ mccabe = [
     {file = "mccabe-0.6.1.tar.gz", hash = "sha256:dd8d182285a0fe56bace7f45b5e7d1a6ebcbf524e8f3bd87eb0f125271b8831f"},
 ]
 ou-sphinx-theme = [
-    {file = "ou-sphinx-theme-0.4.0.tar.gz", hash = "sha256:55996c723ac82b2b34889c16114cf90a52a56f158eba98f1f3a5d5e074b77399"},
-    {file = "ou_sphinx_theme-0.4.0-py3-none-any.whl", hash = "sha256:6e11f0bf5eb5d3f6c6532ad09bfbe757f12fbb7d0263fbad079f182a3a8a87dc"},
+    {file = "ou-sphinx-theme-0.4.1.tar.gz", hash = "sha256:f04ca45284f8d3d8d99954a1637fc7ace5eff012ce3fdf7dc793a4de56dd4a4a"},
+    {file = "ou_sphinx_theme-0.4.1-py3-none-any.whl", hash = "sha256:7441b85fae65c931b68c69c1f48f296987a2d93c52703f9cce890a300469ae05"},
 ]
 packaging = [
     {file = "packaging-20.4-py2.py3-none-any.whl", hash = "sha256:998416ba6962ae7fbd6596850b80e17859a5753ba17c32284f67bfff33784181"},
