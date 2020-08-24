@@ -128,7 +128,7 @@ description = "Python LiveReload is an awesome tool for web developers"
 name = "livereload"
 optional = false
 python-versions = "*"
-version = "2.6.2"
+version = "2.6.3"
 
 [package.dependencies]
 six = "*"
@@ -159,7 +159,7 @@ description = ""
 name = "ou-sphinx-theme"
 optional = false
 python-versions = ">=3.8,<4.0"
-version = "0.3.0"
+version = "0.4.0"
 
 [[package]]
 category = "main"
@@ -442,7 +442,7 @@ python-versions = "*"
 version = "1.12.1"
 
 [metadata]
-content-hash = "cf1a5f827e5758db1caf120ca949169497eceedaed0ed302e49b684d955f9800"
+content-hash = "2995cc6550e2fc9cf874ec82445a9b98a91f4055c2fcdd746a46a9f426aaccba"
 lock-version = "1.0"
 python-versions = "^3.8"
 
@@ -519,7 +519,7 @@ lazy-object-proxy = [
     {file = "lazy_object_proxy-1.4.3-cp38-cp38-win_amd64.whl", hash = "sha256:59f79fef100b09564bc2df42ea2d8d21a64fdcda64979c0fa3db7bdaabaf6239"},
 ]
 livereload = [
-    {file = "livereload-2.6.2.tar.gz", hash = "sha256:d1eddcb5c5eb8d2ca1fa1f750e580da624c0f7fcb734aa5780dc81b7dcbd89be"},
+    {file = "livereload-2.6.3.tar.gz", hash = "sha256:776f2f865e59fde56490a56bcc6773b6917366bce0c267c60ee8aaf1a0959869"},
 ]
 markupsafe = [
     {file = "MarkupSafe-1.1.1-cp27-cp27m-macosx_10_6_intel.whl", hash = "sha256:09027a7803a62ca78792ad89403b1b7a73a01c8cb65909cd876f7fcebd79b161"},
@@ -561,8 +561,8 @@ mccabe = [
     {file = "mccabe-0.6.1.tar.gz", hash = "sha256:dd8d182285a0fe56bace7f45b5e7d1a6ebcbf524e8f3bd87eb0f125271b8831f"},
 ]
 ou-sphinx-theme = [
-    {file = "ou-sphinx-theme-0.3.0.tar.gz", hash = "sha256:d0fb2f17d867f4f828aab4124d955e6acfbef736f761fff506a4948ca1946502"},
-    {file = "ou_sphinx_theme-0.3.0-py3-none-any.whl", hash = "sha256:691515aad324d80bff18a58945e18564c8a080e02a65b835f4e477191b8e6deb"},
+    {file = "ou-sphinx-theme-0.4.0.tar.gz", hash = "sha256:55996c723ac82b2b34889c16114cf90a52a56f158eba98f1f3a5d5e074b77399"},
+    {file = "ou_sphinx_theme-0.4.0-py3-none-any.whl", hash = "sha256:6e11f0bf5eb5d3f6c6532ad09bfbe757f12fbb7d0263fbad079f182a3a8a87dc"},
 ]
 packaging = [
     {file = "packaging-20.4-py2.py3-none-any.whl", hash = "sha256:998416ba6962ae7fbd6596850b80e17859a5753ba17c32284f67bfff33784181"},
