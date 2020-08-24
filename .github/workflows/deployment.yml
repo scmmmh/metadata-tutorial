@@ -33,6 +33,7 @@ jobs:
         poetry run sphinx-build -b latex source build/latex
         cd build/latex
         latexmk
+        ls
         cp metadataworkshop.pdf ../../source/_static/
         cd ../../
         poetry run sphinx-build -b html source build/html
