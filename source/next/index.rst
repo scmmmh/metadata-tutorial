@@ -3,12 +3,28 @@
 Next Steps
 ==========
 
-You have reached the end of the tutorial. This section will briefly cover installing and running the various libraries outside of the tutorial.
+You have reached the end of the tutorial. This section will briefly cover installing and running the various libraries outside of the tutorial, so that you can use what you have learned here in a full research setting. You can also download a :download:`PDF <../_static/metadataworkshop.pdf>` version of the tutorial text.
 
 Running via Docker
 ------------------
 
-The complete tutorial environment is available as a `Docker <https://www.docker.com/>`_ container. The `Docker Engine <https://www.docker.com/get-started>`_ is available for Windows, Mac, and Linux.
+The complete tutorial environment is available as a `Docker <https://www.docker.com/>`_ container. First install the `Docker Engine <https://www.docker.com/get-started>`_, which is available for Windows, Mac, and Linux. Then run the following command to start the container:
+
+.. sourcecode::
+
+   docker run -p 127.0.0.1:8888:8888 --mount type=bind,src=YOUR_WORKING_DIRECTORY,dst=/home/jovyan --name metadata-tutorial mmh352/metadata-tutorial-local
+
+Ensure you replace :code:`YOUR_WORKING_DIRECTORY` with an absolute path to a directory on your computer before running the command. This will automatically download the required image and then map the directory specified into the home directory in the docker container, so that you have access to the tutorial and notebook files outside of the docker container.
+
+After running the command, when the container has been started, a URL to load the tutorial in the browser will be shown. Copy and paste that into the browser to access the tutorial.
+
+To stop the docker container, press :code:`Ctrl+C`.
+
+To re-start the docker container at a later time run the following command:
+
+.. sourcecode::
+
+   docker start -i metadata-tutorial
 
 Running fully locally
 ---------------------
@@ -28,7 +44,7 @@ After that you can run ``python`` inside the virtual environment and all the req
 Running inside a local Jupyter Notebook Server
 ++++++++++++++++++++++++++++++++++++++++++++++
 
-If you want to run a local Jupyter Notebook Server first run this command:
+If you want to run a local Jupyter Notebook Server, run the following additional installation command:
 
 .. sourcecode:: console
 
@@ -40,4 +56,4 @@ Then run the following to start the server:
 
     jupyter notebook
 
-This will automatically load the Single-user Notebook page in your browser.
+This will automatically load the Single-user Notebook page in your browser and you can then create your own notebooks in which to run the tutorial's code.
