@@ -32,6 +32,7 @@ gulp.task('watch', gulp.series('default', function(cb) {
 gulp.task('serve', gulp.parallel('watch', function(cb) {
     connect.server({
         root: 'build/html',
+        host: '0.0.0.0',
         port: '8080',
     });
     cb();
