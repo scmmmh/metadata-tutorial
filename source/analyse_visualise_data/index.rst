@@ -1,5 +1,5 @@
 :layout: tutorial-iframe
-:iframe-src: /tutorial/_static/blank.html
+:iframe-src: /tutorial/content/_static/blank.html
 :app-menu-download: true
 :app-menu-jupyterhub: true
 
