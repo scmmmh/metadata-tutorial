@@ -1,4 +1,7 @@
-:layout: tutorial-only-left
+:layout: tutorial-iframe
+:iframe-src: /tutorial/_static/blank.html
+:app-menu-download: true
+:app-menu-jupyterhub: true
 
 Filtering & Transformation
 ==========================

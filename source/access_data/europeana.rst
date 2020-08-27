@@ -1,3 +1,5 @@
+:iframe-src: /notebooks/Loading.ipynb
+
 Loading data from Europeana
 ===========================
 
