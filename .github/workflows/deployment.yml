@@ -32,9 +32,9 @@ jobs:
         poetry config virtualenvs.in-project true
         poetry run sphinx-build -b latex source build/latex
         cd build/latex
-        latexmk -pdf metadataworkshop.tex
+        latexmk -pdf metadatatutorial.tex
         ls
-        cp metadataworkshop.pdf ../../source/_static/
+        cp metadatatutorial.pdf ../../source/_static/
         cd ../../
         poetry run sphinx-build -b html source build/html
 

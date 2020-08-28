@@ -6,7 +6,7 @@
 Next Steps
 ==========
 
-You have reached the end of the tutorial. This section will briefly cover installing and running the various libraries outside of the tutorial, so that you can use what you have learned here in a full research setting. You can also download a :download:`PDF <../_static/metadataworkshop.pdf>` version of the tutorial text.
+You have reached the end of the tutorial. This section will briefly cover installing and running the various libraries outside of the tutorial, so that you can use what you have learned here in a full research setting. You can also download a :download:`PDF <../_static/metadatatutorial.pdf>` version of the tutorial text.
 
 Running via Docker
 ------------------
