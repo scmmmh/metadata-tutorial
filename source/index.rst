@@ -25,3 +25,9 @@ The tutorial does not have any pre-requisites, except that you must be prepared 
    Filter & Transform <filter_transform_data/index>
    Analyse & Visualise <analyse_visualise_data/index>
    next/index
+
+Contributors
+------------
+
+* Mark Hall - The Open University - http://www.open.ac.uk/people/mmh352
+* Andreas Lüschow - Georg-August-Universität Göttingen, Niedersächsische Staats- und Universitätsbibliothek Göttingen
