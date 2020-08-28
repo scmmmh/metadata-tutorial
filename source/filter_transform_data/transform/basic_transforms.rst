@@ -36,7 +36,6 @@ Next, let us look at the :code:`'static'` transformation. Add a new cell with th
 .. sourcecode:: python
 
     mapping = ('static', 'source', 'europeana')
-    filtered =
     transformed = RecordsTransform(reader, mapping)
     for record in transformed:
         print(record)

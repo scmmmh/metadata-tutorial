@@ -85,4 +85,4 @@ The difference in readability is clear and applies to all other code as well. Re
 
 .. important::
 
-   Experience from software development shows that code you wrote yourselv, but haven't looked at for two weeks is as readable and understandable as code that somebody else wrote. Thus it is imperative to cleanly structure your code and provide comments as well, so that you can remember what you were thinking.
+   Experience from software development shows that code you wrote yourself, but haven't looked at for at least two weeks is as readable and understandable as code that somebody else wrote. Thus it is imperative to cleanly structure your code and provide comments as well, so that you can remember what you were thinking.

@@ -36,7 +36,7 @@ When you run this code, you are most likely going to get a ``KeyError``. This is
         else:
             print(record.metadata['{http://www.loc.gov/METS/}mets'].mets_dmdSec.mets_mdWrap.mets_xmlData.mods_mods.mods_titleInfo.mods_title._text)
 
-When you run the cell, you will see that now your code outputs ten title.
+When you run the cell, you will see that now your code outputs ten titles.
 
 The polymatheia library provides an alternative function for getting values from a record. Add a new cell to the end of the notebook with this code:
 

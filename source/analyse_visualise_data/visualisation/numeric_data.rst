@@ -8,7 +8,7 @@ We will start with numerical data. For numerical columns, we can use the :code:`
 
 .. sourcecode:: python
 
-    seaborn.distplot(df['title_tokens'], bins=range(0, max(df['title_tokens']), 1))
+    seaborn.distplot(df['title_tokens'])
 
 The :code:`distplot` merges two plots into a single one. The bars are a histogram plot and the line is a density plot. A histogram plot is created by splitting the range of values into a number of :code:`bins` and then assigning each value to the appropriate bin. The size of each bar then represents the fraction of values that are in that bin. By default the number of bins is estimated from the data, but we can also specify what bins we want:
 

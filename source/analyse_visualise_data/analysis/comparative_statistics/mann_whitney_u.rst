@@ -74,7 +74,7 @@ which produces the following result:
 
     MannwhitneyuResult(statistic=4545.0, pvalue=0.013495436635233329)
 
-The *p-value* here is lower than in the previous test, indicating that the it is likely that the German titles are shorter than the Hungarian ones.
+The *p-value* here is lower than in the previous test. This indicates that the it is likely that the German titles are shorter than the Hungarian ones.
 
 We would now need to apply the pair-wise test to all combinations of two languages. For example to see a pair with very significant differences run the following:
 

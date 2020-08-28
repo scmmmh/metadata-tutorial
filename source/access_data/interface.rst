@@ -37,6 +37,18 @@ The Jupyter notebook on the right initially contains a single code cell. Into th
 
 Then press ``Ctrl + Enter`` on your keyboard to run the code in the cell (you can also click on the "Run" button in the toolbar). You will see that in the output area below the code it will say :code:`'Metadata rule the world!'`.
 
+Because this is a very simple piece of code, it runs very quickly. When you have code that takes longer to run, you can see that it is still running by looking at the square brackets ``[ ]`` next to your code. If the square brackets are empty, then the cell has not yet been run. If they contain a number, then that indicates that the cell has already been run. Finally, if the square brackets contain an asterisk "*", then that means that the cell is currently running.
+
+Try out the following code in a new cell:
+
+.. sourcecode:: python
+
+    from time import sleep
+
+    sleep(10)
+
+When you run the cell, it will sleep (pause) for 10 seconds and then complete. Watch the square brackets to see them change to indicate progress.
+
 Text cells
 ++++++++++
 

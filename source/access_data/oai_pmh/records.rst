@@ -102,7 +102,7 @@ To switch to using METS/MODS, we add an extra parameter to when we create the ne
 
     reader = OAIRecordReader('http://www.digizeitschriften.de/oai2/', max_records=1, metadata_prefix='mets')
     for record in reader:
-        print(record.header.identifier._text)
+        print(record)
 
 The METS/MODS output is too large to be included here, but you can see that it follows the same basic structure as for the "oai_dc" metadata.
 
