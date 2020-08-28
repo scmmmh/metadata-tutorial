@@ -31,3 +31,13 @@ Contributors
 
 * Mark Hall - The Open University - http://www.open.ac.uk/people/mmh352
 * Andreas Lüschow - Georg-August-Universität Göttingen, Niedersächsische Staats- und Universitätsbibliothek Göttingen
+
+License
+-------
+
+The `Metadata Tutorial <https://github.com/mmh352/metadata-tutorial>`_ is licensed under |LicenseLink|
+
+.. |LicenseLink| image:: https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png
+   :alt: CreativeCommons Attribution-ShareAlike 4.0 International
+   :target: https://creativecommons.org/licenses/by-sa/4.0/
+   :height: 36px
