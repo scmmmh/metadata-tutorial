@@ -1,11 +1,13 @@
-name: Deployment
+name: Build
 
 on:
   push:
     branches: [ default ]
+  pull_request:
+    branches: [ default ]
 
 jobs:
-  build_and_deploy:
+  build:
     runs-on: ubuntu-20.04
 
     steps:
@@ -35,14 +37,3 @@ jobs:
         cp metadatatutorial.pdf ../../source/_static/
         cd ../../
         poetry run sphinx-build -b html source build/html
-
-    - name: Compress the Tutorial
-      run: |
-        cd build/html
-        tar -jcvf ../../tutorial.tar.bz2 *
-
-    - name: Upload the Tutorial
-      run: |
-        curl -H "Authorization: bearer $AuthenticationToken" -T tutorial.tar.bz2 https://teaching.room3b.eu/ou_sar/metadata-workshop/tutorial
-      env:
-        AuthenticationToken: ${{ secrets.AuthenticationToken }}
