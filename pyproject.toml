@@ -7,7 +7,7 @@ authors = ["Mark Hall <mark.hall@work.room3b.eu>"]
 [tool.poetry.dependencies]
 python = "^3.8"
 sphinx = "^3.1.2"
-ou-sphinx-theme = "^0.5.3"
+ou-sphinx-theme = "^0.5.4"
 
 [tool.poetry.dev-dependencies]
 pylint = "^2.5.3"
