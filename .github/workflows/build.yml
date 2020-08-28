@@ -1,0 +1,39 @@
+name: Build
+
+on:
+  push:
+    branches: [ default ]
+  pull_request:
+    branches: [ default ]
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Add .local path
+      run: |
+        echo "::add-path::$HOME/.local/bin"
+
+    - name: Install Base Dependencies
+      run: |
+        sudo apt-get install python3-venv pipx latexmk texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra
+        pipx install poetry
+
+    - name: Install Dependencies
+      run: |
+        poetry config virtualenvs.in-project true
+        poetry install --no-dev
+
+    - name: Build the Tutorial
+      run: |
+        poetry config virtualenvs.in-project true
+        poetry run sphinx-build -b latex source build/latex
+        cd build/latex
+        latexmk -pdf metadatatutorial.tex
+        ls
+        cp metadatatutorial.pdf ../../source/_static/
+        cd ../../
+        poetry run sphinx-build -b html source build/html
