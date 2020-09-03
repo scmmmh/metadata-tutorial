@@ -93,11 +93,11 @@ description = "A Python utility / library to sort Python imports."
 name = "isort"
 optional = false
 python-versions = ">=3.6,<4.0"
-version = "5.4.2"
+version = "5.5.0"
 
 [package.extras]
 colors = ["colorama (>=0.4.3,<0.5.0)"]
-pipfile_deprecated_finder = ["pipreqs", "requirementslib", "tomlkit (>=0.5.3)"]
+pipfile_deprecated_finder = ["pipreqs", "requirementslib"]
 requirements_deprecated_finder = ["pipreqs", "pip-api"]
 
 [[package]]
@@ -159,7 +159,7 @@ description = ""
 name = "ou-sphinx-theme"
 optional = false
 python-versions = ">=3.8,<4.0"
-version = "0.5.4"
+version = "0.6.0"
 
 [[package]]
 category = "main"
@@ -442,7 +442,7 @@ python-versions = "*"
 version = "1.12.1"
 
 [metadata]
-content-hash = "06b6c0d880b0a16728468f6fc8335e67a674c62cc6e1c3232790c3b00829e985"
+content-hash = "1ed9881ee663dfbd6c3c2418cc4551c1da92c3a10cfcb88384809f6aaaba49c9"
 lock-version = "1.0"
 python-versions = "^3.8"
 
@@ -488,8 +488,8 @@ imagesize = [
     {file = "imagesize-1.2.0.tar.gz", hash = "sha256:b1f6b5a4eab1f73479a50fb79fcf729514a900c341d8503d62a62dbc4127a2b1"},
 ]
 isort = [
-    {file = "isort-5.4.2-py3-none-any.whl", hash = "sha256:60a1b97e33f61243d12647aaaa3e6cc6778f5eb9f42997650f1cc975b6008750"},
-    {file = "isort-5.4.2.tar.gz", hash = "sha256:d488ba1c5a2db721669cc180180d5acf84ebdc5af7827f7aaeaa75f73cf0e2b8"},
+    {file = "isort-5.5.0-py3-none-any.whl", hash = "sha256:8103bc070d9258fe97e82470cb30f0e4b730e94c44ac81ebae32b05d5a6c87ea"},
+    {file = "isort-5.5.0.tar.gz", hash = "sha256:0906e0e7092e060c05de709ad172e1ec1b26aa27fdd4e8093f257890cd881d18"},
 ]
 jinja2 = [
     {file = "Jinja2-2.11.2-py2.py3-none-any.whl", hash = "sha256:f0a4641d3cf955324a89c04f3d94663aa4d638abe8f733ecd3582848e1c37035"},
@@ -561,8 +561,8 @@ mccabe = [
     {file = "mccabe-0.6.1.tar.gz", hash = "sha256:dd8d182285a0fe56bace7f45b5e7d1a6ebcbf524e8f3bd87eb0f125271b8831f"},
 ]
 ou-sphinx-theme = [
-    {file = "ou-sphinx-theme-0.5.4.tar.gz", hash = "sha256:03ea22e244aed586c1543ac8633c18376f991b84d7f440ef1b74c48180c78b77"},
-    {file = "ou_sphinx_theme-0.5.4-py3-none-any.whl", hash = "sha256:ee34debd7fd28ea1d447ff98f584826e77652768e35d8d4a4d3cdbaec5fa0a52"},
+    {file = "ou-sphinx-theme-0.6.0.tar.gz", hash = "sha256:7d2859ceec3257a18d6cb479de65bfaa508b8be96b0996ea21ad710851f2e2a5"},
+    {file = "ou_sphinx_theme-0.6.0-py3-none-any.whl", hash = "sha256:b4388d63a3be9d202f6c9d90b1b75760ecb89586f7f14fd440e28d080208a46b"},
 ]
 packaging = [
     {file = "packaging-20.4-py2.py3-none-any.whl", hash = "sha256:998416ba6962ae7fbd6596850b80e17859a5753ba17c32284f67bfff33784181"},
