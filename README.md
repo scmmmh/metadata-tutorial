@@ -4,7 +4,7 @@ This tutorial was developed for the DHd Working Group on Newspapers and Periodic
 
 Build & Deployment status: ![](https://github.com/mmh352/metadata-tutorial/workflows/Build/badge.svg) ![](https://github.com/mmh352/metadata-tutorial/workflows/Deployment/badge.svg)
 
-You can try the tutorial out here (be aware that the data is not persisted): [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mmh352/metadata-tutorial-container/default)
+You can try the tutorial out here (be aware that the data are not persisted): [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mmh352/metadata-tutorial-container/default)
 
 If you wish to run the tutorial locally, open the Binder link above and follow the instructions in the "Next Steps" block.
 
