@@ -11,9 +11,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Setup Path
+    - name: Setup Environment
       run: |
         echo "PATH=$HOME/.local/bin:$PATH" >> $GITHUB_ENV
+        echo "PIPX_HOME=$HOME/.local/pipx" >> $GITHUB_ENV
+        echo "PIPX_BIN_DIR=$HOME/.local/bin" >> $GITHUB_ENV
 
     - name: Install Base Dependencies
       run: |
@@ -23,12 +25,10 @@ jobs:
 
     - name: Install Dependencies
       run: |
-        poetry config virtualenvs.in-project true
         poetry install --no-dev
 
     - name: Build the Tutorial
       run: |
-        poetry config virtualenvs.in-project true
         poetry run sphinx-build -b latex source build/latex
         cd build/latex
         latexmk -pdf metadatatutorial.tex
