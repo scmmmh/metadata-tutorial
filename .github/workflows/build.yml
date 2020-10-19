@@ -23,6 +23,7 @@ jobs:
         sudo apt-get install python3-venv pipx latexmk texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra
         pipx install poetry
         echo $PATH
+        pipx ensurepath
 
     - name: Install Dependencies
       run: |
