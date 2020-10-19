@@ -22,15 +22,15 @@ jobs:
         sudo apt-get update
         sudo apt-get install python3-venv pipx latexmk texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra
         pipx install poetry
-        echo $PATH
-        pipx ensurepath
 
     - name: Install Dependencies
       run: |
+        pipx ensurepath
         poetry install --no-dev
 
     - name: Build the Tutorial
       run: |
+        pipx ensurepath
         poetry run sphinx-build -b latex source build/latex
         cd build/latex
         latexmk -pdf metadatatutorial.tex
