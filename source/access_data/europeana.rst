@@ -108,7 +108,7 @@ Before we move on, we will just fetch a second larger data-set to use for the re
 .. sourcecode:: python
 
     reader = EuropeanaSearchReader(EUROPEANA_API_KEY, 'Gutzkow OR Zäunemann OR Heyse', profile='rich')
-    writer = LocalWriter('europeana_test', 'guid')
+    writer = JSONWriter('europeana_test', 'guid')
     writer.write(reader)
 
 As you can see the code is very similar to the code we used for saving the OAI-PMH data. The difference is only the name of the directory to store the data in and the path for the unique identifier which for Europeana is the "guid" field. This will take a while to download all the data. When it has completed, you can move on to the next step in the tutorial.

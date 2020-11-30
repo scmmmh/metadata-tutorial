@@ -17,7 +17,7 @@ Start by adding a new cell importing everything we will need:
 
     from collections import Counter
     from pandas import DataFrame
-    from polymatheia.data.reader import LocalReader
+    from polymatheia.data.reader import JSONReader
     from polymatheia.data.writer import PandasDFWriter
     from polymatheia.filter import RecordsFilter
     from polymatheia.transform import RecordsTransform
@@ -27,7 +27,7 @@ Then add and run a cell with the following code:
 
 .. sourcecode:: python
 
-    reader = LocalReader('europeana_test')
+    reader = JSONReader('europeana_test')
     mapping = ('parallel', ('copy', 'id', 'id'),
                            ('copy', 'lang', 'dcLanguage[0]'),
                            ('custom', 'title_tokens', lambda record: len(record.title[0].split())),
@@ -76,7 +76,7 @@ We will use the two-letter codes, meaning we need to find mappings for "ger", "u
             return 'it'
         return record.lang
 
-    reader = LocalReader('europeana_test')
+    reader = JSONReader('europeana_test')
     mapping = ('parallel', ('copy', 'id', 'id'),
                            ('sequence', ('copy', 'lang', 'dcLanguage[0]'),
                                         ('custom', 'lang', map_language)),
@@ -121,7 +121,7 @@ To filter those out, first run the :code:`Counter(df['lang']).most_common()` cel
             return 'it'
         return record.lang
 
-    reader = LocalReader('europeana_test')
+    reader = JSONReader('europeana_test')
     mapping = ('parallel', ('copy', 'id', 'id'),
                            ('sequence', ('copy', 'lang', 'dcLanguage[0]'), ('custom', 'lang', map_language)),
                            ('custom', 'title_tokens', lambda record: len(record.title[0].split())),

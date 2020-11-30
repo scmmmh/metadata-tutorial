@@ -9,12 +9,12 @@ When analysing a data-set the first step should always be to generate some basic
 .. sourcecode:: python
 
     from collections import Counter
-    from polymatheia.data.reader import LocalReader
+    from polymatheia.data.reader import JSONReader
     from polymatheia.data.writer import PandasDFWriter
     from polymatheia.filter import RecordsFilter
     from polymatheia.transform import RecordsTransform
 
-    reader = LocalReader('europeana_test')
+    reader = JSONReader('europeana_test')
 
 Two additions here that we have not used previously are the :code:`Counter` and the :code:`PandasDFWriter`. The :code:`PandasDFWriter` is used first to transform the source metadata records into the Pandas :code:`DataFrame` structure needed for all further analysis. The :code:`Counter` will be used later to determine frequencies.
 

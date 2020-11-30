@@ -11,7 +11,7 @@ To get started, add the following code into the notebook and run it:
 .. sourcecode:: python
 
     import seaborn
-    from polymatheia.data.reader import LocalReader
+    from polymatheia.data.reader import JSONReader
     from polymatheia.data.writer import PandasDFWriter
     from polymatheia.filter import RecordsFilter
     from polymatheia.transform import RecordsTransform
@@ -35,7 +35,7 @@ To get started, add the following code into the notebook and run it:
             return 'it'
         return record.lang
 
-    reader = LocalReader('europeana_test')
+    reader = JSONReader('europeana_test')
     mapping = ('parallel', ('copy', 'id', 'id'),
                            ('sequence', ('copy', 'lang', 'dcLanguage[0]'), ('custom', 'lang', map_language)),
                            ('custom', 'title_tokens', lambda record: len(record.title[0].split())),
