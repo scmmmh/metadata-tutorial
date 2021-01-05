@@ -1,5 +1,5 @@
 :layout: tutorial-iframe
-:iframe-src: /tutorial/content/_static/blank.html
+:iframe-src: /tutorial/_static/blank.html
 :app-menu-download: true
 :app-menu-jupyterhub: true
 
@@ -15,7 +15,7 @@ The complete tutorial environment is available as a `Docker <https://www.docker.
 
 .. sourcecode::
 
-   docker run -p 127.0.0.1:8888:8888 --mount type=bind,src=YOUR_WORKING_DIRECTORY,dst=/home/jovyan --name metadata-tutorial mmh352/metadata-tutorial-local
+   docker run -p 127.0.0.1:8888:8888 --mount type=bind,src=YOUR_WORKING_DIRECTORY,dst=/home/jovyan --name metadata-tutorial mmh352/metadata-tutorial
 
 Ensure you replace :code:`YOUR_WORKING_DIRECTORY` with an absolute path to a directory on your computer before running the command. This will automatically download the required image and then map the directory specified into the home directory in the docker container, so that you have access to the tutorial and notebook files outside of the docker container.
 
@@ -32,7 +32,7 @@ To re-start the docker container at a later time run the following command:
 Running fully locally
 ---------------------
 
-To run the various libraries locally, it is recommended to install everything into a virtual environment, which separates all the Python libraries from anything else you have installed on your machine. If you have no preferences regarding how to manage your virtual environments, then `Poetry <https://python-poetry.org/>`_ is the recommended way to create and manage your virtual environments.
+To run the various libraries locally, it is recommended to install everything into a virtual environment, which separates all the Python libraries from anything else you have installed on your machine. If you have no preferences regarding how to manage your virtual environments, then `Poetry <https://python-poetry.org/>`_ is a good way to create and manage your virtual environments.
 
 After installing Poetry, follow these steps to install all required dependencies:
 
