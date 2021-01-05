@@ -1,5 +1,5 @@
 :layout: tutorial-iframe
-:iframe-src: /notebooks/ComparativeStatistics.ipynb
+:iframe-src: /../notebooks/ComparativeStatistics.ipynb
 
 Comparative Statistics
 ======================

@@ -1,5 +1,5 @@
 :layout: tutorial-iframe
-:iframe-src: /notebooks/DescriptiveStatistics.ipynb
+:iframe-src: /../notebooks/DescriptiveStatistics.ipynb
 
 Descriptive Statistics
 ======================
