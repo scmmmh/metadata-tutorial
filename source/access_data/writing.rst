@@ -1,4 +1,4 @@
-:iframe-src: /notebooks/Loading.ipynb
+:iframe-src: /../notebooks/Loading.ipynb
 
 Storing data locally
 ====================

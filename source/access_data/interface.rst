@@ -1,4 +1,4 @@
-:iframe-src: /notebooks/Welcome.ipynb
+:iframe-src: /../notebooks/Welcome.ipynb
 
 Interface
 =========
