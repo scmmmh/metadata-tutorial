@@ -27,7 +27,7 @@ To re-start the docker container at a later time run the following command:
 
 .. sourcecode::
 
-   docker start -i -p 127.0.0.1:8888:8888 metadata-tutorial
+   docker start -i metadata-tutorial
 
 Running fully locally
 ---------------------
