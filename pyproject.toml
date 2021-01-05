@@ -2,7 +2,7 @@
 name = "metadata-workshop"
 version = "0.1.0"
 description = ""
-authors = ["Mark Hall <mark.hall@work.room3b.eu>"]
+authors = ["Mark Hall <mark.hall@open.ac.uk>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
