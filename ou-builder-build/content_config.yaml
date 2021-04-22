@@ -1,0 +1,14 @@
+paths:
+  
+    
+  - source: /etc/module-content/data/tutorial
+    target: /home/ou-user/MetadataTutorial-2/tutorial
+    overwrite: always
+    
+  
+    
+  - source: /etc/module-content/data/notebooks
+    target: /home/ou-user/MetadataTutorial-2/notebooks
+    overwrite: if-unchanged
+    
+  

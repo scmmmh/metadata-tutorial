@@ -4,7 +4,9 @@ This tutorial was developed for the DHd Working Group on Newspapers and Periodic
 
 Build & Deployment status: ![](https://github.com/mmh352/metadata-tutorial/workflows/Build/badge.svg) ![](https://github.com/mmh352/metadata-tutorial/workflows/Deployment/badge.svg)
 
-The complete tutorial environment is available as a [Docker](https://www.docker.com) container. First install the [Docker Engine](https://www.docker.com/get-started), which is available for Windows, Mac, and Linux. Then run the following command to start the container:
+Try it out (your files will not be persisted!): [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mmh352/metadata-tutorial/default)
+
+To run the tutorial locally, the complete tutorial environment is available as a [Docker](https://www.docker.com) image. First install the [Docker Engine](https://www.docker.com/get-started), which is available for Windows, Mac, and Linux. Then run the following command to start the container:
 
 ```
 docker run -p 127.0.0.1:8888:8888 --volume metadata-tutorial:/home/ou-user/MetadataTutorial-2: --name metadata-tutorial mmh352/metadatatutorial-2:latest
