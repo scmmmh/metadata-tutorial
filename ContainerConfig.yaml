@@ -18,3 +18,8 @@ packs:
   - tutorial-server
 jupyter_notebook:
   default_url: '/tutorial-server'
+tutorial_server:
+  parts:
+    - name: tutorial
+      type: tutorial
+  default: tutorial
