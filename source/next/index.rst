@@ -17,9 +17,7 @@ The complete tutorial environment is available as a `Docker <https://www.docker.
 
    docker run -p 127.0.0.1:8888:8888 --volume metadata-tutorial:/home/ou-user/MetadataTutorial-2: --name metadata-tutorial mmh352/metadatatutorial-2:latest
 
-Ensure you replace :code:`YOUR_WORKING_DIRECTORY` with an absolute path to a directory on your computer before running the command. This will automatically download the required image and then map the directory specified into the home directory in the docker container, so that you have access to the tutorial and notebook files outside of the docker container.
-
-After running the command, when the container has been started, a URL to load the tutorial in the browser will be shown. Copy and paste that into the browser to access the tutorial.
+This will automatically download the required image and start the container. After running the command, when the container has been started, a URL to load the tutorial in the browser will be shown. Copy and paste that into the browser to access the tutorial.
 
 To stop the docker container, press :code:`Ctrl+C`.
 
