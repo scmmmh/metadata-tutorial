@@ -11,17 +11,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Setup Environment
-      run: |
-        echo "PATH=$HOME/.local/bin:$PATH" >> $GITHUB_ENV
-        echo "PIPX_HOME=$HOME/.local/pipx" >> $GITHUB_ENV
-        echo "PIPX_BIN_DIR=$HOME/.local/bin" >> $GITHUB_ENV
-
     - name: Install Base Dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install python3-venv pipx latexmk texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra
-        pipx install poetry
+        sudo apt-get install python3-venv latexmk texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra
+        pip3 install poetry git+https://github.com/mmh352/ou-container-builder.git
 
     - name: Install Dependencies
       run: |
@@ -37,13 +31,16 @@ jobs:
         cd ../../
         poetry run sphinx-build -b html source build/html
 
-    - name: Compress the Tutorial
+    - name: Generate the Dockerfile
       run: |
-        cd build/html
-        tar -jcvf ../../tutorial.tar.bz2 *
+        ou-container-builder --no-build
 
-    - name: Upload the Tutorial
-      run: |
-        curl -H "Authorization: bearer $AuthenticationToken" -T tutorial.tar.bz2 https://teaching.room3b.eu/ou_sar/metadata-workshop/tutorial
-      env:
-        AuthenticationToken: ${{ secrets.AuthenticationToken }}
+    - name: Build and push the Docker image
+      uses: docker/build-push-action@v1.1.0
+      with:
+        username: mmh352
+        password: ${{ secrets.DOCKERACCESSTOKEN }}
+        repository: mmh352/metadatatutorial-2
+        tags: latest
+        tag_with_sha: true
+        dockerfile: Dockerfile

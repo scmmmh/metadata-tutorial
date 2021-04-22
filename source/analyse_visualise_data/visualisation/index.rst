@@ -1,5 +1,5 @@
 :layout: tutorial-iframe
-:iframe-src: /../notebooks/Visualisation.ipynb
+:iframe-src: /../notebooks/notebooks/Visualisation.ipynb
 
 Visualisation
 =============
