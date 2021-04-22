@@ -1,0 +1,20 @@
+module:
+  code: MetadataTutorial
+  presentation: "2"
+type: jupyter-notebook
+content:
+  - source: build/html
+    target: tutorial
+    overwrite: always
+  - source: build/html/_static/workspace
+    target: notebooks
+    overwrite: if-unchanged
+packages:
+  pip:
+    - polymatheia>=0.3.1
+    - scipy
+    - seaborn
+packs:
+  - tutorial-server
+jupyter_notebook:
+  default_url: '/tutorial-server'
