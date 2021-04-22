@@ -22,4 +22,5 @@ tutorial_server:
   parts:
     - name: tutorial
       type: tutorial
+      path: tutorial
   default: tutorial
