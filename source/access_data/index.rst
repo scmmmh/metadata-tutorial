@@ -1,7 +1,5 @@
 :layout: tutorial-iframe
 :iframe-src: /tutorial/_static/blank.html
-:app-menu-download: true
-:app-menu-jupyterhub: true
 
 Loading Data
 ============
