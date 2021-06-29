@@ -13,7 +13,7 @@ The complete tutorial environment is available as a `Docker <https://www.docker.
 
 .. sourcecode::
 
-   docker run -p 127.0.0.1:8888:8888 --volume metadata-tutorial:/home/ou-user/MetadataTutorial-2: --name metadata-tutorial mmh352/metadatatutorial-2:latest
+    docker run -p 127.0.0.1:8888:8888 --volume metadata-tutorial:/home/ou/MetadataTutorial-2: --name metadata-tutorial mmh352/metadatatutorial-2:latest
 
 This will automatically download the required image and start the container. After running the command, when the container has been started, a URL to load the tutorial in the browser will be shown. Copy and paste that into the browser to access the tutorial.
 
