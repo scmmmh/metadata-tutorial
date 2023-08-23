@@ -21,7 +21,8 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install python3-venv pipx
-          pipx install poetry ou-container-builder
+          pipx install poetry
+          pipx install ou-container-builder
 
       - name: Install Dependencies
         run: |
