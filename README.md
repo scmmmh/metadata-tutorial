@@ -24,17 +24,8 @@ For development, you need the following pre-requisites:
 Then install all dependencies:
 
 ```
-yarn install
 poetry install
 ```
-
-Run the development server:
-
-```
-gulp serve
-```
-
-You can then access the tutorial at http://localhost:8080
 
 ## License
 
