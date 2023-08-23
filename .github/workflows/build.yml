@@ -2,41 +2,37 @@ name: Build
 
 on:
   push:
-    branches: [ default ]
+    branches: [default]
   pull_request:
-    branches: [ default ]
+    branches: [default]
 
 jobs:
   build:
     runs-on: ubuntu-20.04
 
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: Setup Environment
-      run: |
-        echo "PATH=$HOME/.local/bin:$PATH" >> $GITHUB_ENV
-        echo "PIPX_HOME=$HOME/.local/pipx" >> $GITHUB_ENV
-        echo "PIPX_BIN_DIR=$HOME/.local/bin" >> $GITHUB_ENV
+      - name: Setup Environment
+        run: |
+          echo "PATH=$HOME/.local/bin:$PATH" >> $GITHUB_ENV
+          echo "PIPX_HOME=$HOME/.local/pipx" >> $GITHUB_ENV
+          echo "PIPX_BIN_DIR=$HOME/.local/bin" >> $GITHUB_ENV
 
-    - name: Install Base Dependencies
-      run: |
-        sudo apt-get update
-        sudo apt-get install python3-venv pipx latexmk texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra
-        echo $PIPX_HOME
-        echo $PIPX_BIN_DIR
-        pipx install poetry
+      - name: Install Base Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install python3-venv pipx latexmk texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra
+          echo $PIPX_HOME
+          echo $PIPX_BIN_DIR
+          pipx install poetry
 
-    - name: Install Dependencies
-      run: |
-        poetry install --no-dev
+      - name: Install Dependencies
+        run: |
+          poetry install --no-dev
 
-    - name: Build the Tutorial
-      run: |
-        poetry run sphinx-build -b latex source build/latex
-        cd build/latex
-        latexmk -pdf metadatatutorial.tex
-        ls
-        cp metadatatutorial.pdf ../../source/_static/
-        cd ../../
-        poetry run sphinx-build -b html source build/html
+      - name: Build the Tutorial
+        run: |
+          poetry run jb build --builder pdfhtml content
+          cp content/_build/pdf/book.pdf content/metadatatutorial.pdf
+          poetry run jb build content
