@@ -23,8 +23,6 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install python3-venv pipx
-          echo $PIPX_HOME
-          echo $PIPX_BIN_DIR
           pipx install poetry
 
       - name: Install Dependencies
