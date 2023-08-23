@@ -2,45 +2,47 @@ name: Deployment
 
 on:
   push:
-    branches: [ default ]
+    branches: [default]
 
 jobs:
   build_and_deploy:
     runs-on: ubuntu-20.04
 
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: Install Base Dependencies
-      run: |
-        sudo apt-get update
-        sudo apt-get install python3-venv latexmk texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra
-        pip3 install poetry git+https://github.com/mmh352/ou-container-builder.git
+      - name: Setup Environment
+        run: |
+          echo "PATH=$HOME/.local/bin:$PATH" >> $GITHUB_ENV
+          echo "PIPX_HOME=$HOME/.local/pipx" >> $GITHUB_ENV
+          echo "PIPX_BIN_DIR=$HOME/.local/bin" >> $GITHUB_ENV
 
-    - name: Install Dependencies
-      run: |
-        poetry install --no-dev
+      - name: Install Base Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install python3-venv pipx
+          pipx install poetry ou-container-builder
 
-    - name: Build the Tutorial
-      run: |
-        poetry run sphinx-build -b latex source build/latex
-        cd build/latex
-        latexmk -pdf metadatatutorial.tex
-        ls
-        cp metadatatutorial.pdf ../../source/_static/
-        cd ../../
-        poetry run sphinx-build -b html source build/html
+      - name: Install Dependencies
+        run: |
+          poetry install --no-dev
 
-    - name: Generate the Dockerfile
-      run: |
-        ou-container-builder --no-build
+      - name: Build the Tutorial
+        run: |
+          poetry run jb build --builder pdfhtml content
+          cp content/_build/pdf/book.pdf content/metadatatutorial.pdf
+          poetry run jb build content
 
-    - name: Build and push the Docker image
-      uses: docker/build-push-action@v1.1.0
-      with:
-        username: mmh352
-        password: ${{ secrets.DOCKERACCESSTOKEN }}
-        repository: mmh352/metadatatutorial-2
-        tags: latest
-        tag_with_sha: true
-        dockerfile: Dockerfile
+      - name: Generate the Dockerfile
+        run: |
+          ou-container-builder --no-build
+
+      - name: Build and push the Docker image
+        uses: docker/build-push-action@v1.1.0
+        with:
+          username: scmmmh
+          password: ${{ secrets.DOCKERACCESSTOKEN }}
+          repository: scmmmh/metadatatutorial
+          tags: latest
+          tag_with_sha: true
+          dockerfile: Dockerfile
