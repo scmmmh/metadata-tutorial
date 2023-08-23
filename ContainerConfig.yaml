@@ -1,13 +1,12 @@
 module:
   code: MetadataTutorial
-  presentation: "2"
-type: jupyter-notebook
+  presentation: "3"
 content:
-  - source: build/html
-    target: tutorial
+  - source: content/_build/html
+    target: .tutorial
     overwrite: always
-  - source: build/html/_static/workspace
-    target: notebooks
+  - source: notebooks
+    target: ""
     overwrite: if-unchanged
 packages:
   pip:
@@ -15,12 +14,14 @@ packages:
     - scipy
     - seaborn
 packs:
-  - tutorial-server
-jupyter_notebook:
-  default_url: '/tutorial-server'
-tutorial_server:
-  parts:
-    - name: tutorial
-      type: tutorial
-      path: tutorial
-  default: tutorial
+  - name: jupyterlab
+    options:
+      version: 4
+web_apps:
+  - path: content
+    command: python -m http.server -b 127.0.0.1 -d .tutorial {port}
+    timeout: 60
+    launcher_entry:
+      title: Tutorial Content
+server:
+  default_path: /lab

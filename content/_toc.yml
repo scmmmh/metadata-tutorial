@@ -1,0 +1,42 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: index
+chapters:
+  - file: access_data/index
+    sections:
+      - file: access_data/interface
+      - file: access_data/oai_pmh/index
+        sections:
+          - file: access_data/oai_pmh/formats
+          - file: access_data/oai_pmh/records
+          - file: access_data/oai_pmh/sets
+      - file: access_data/writing
+      - file: access_data/local_data
+      - file: access_data/europeana
+  - file: filter_transform_data/index
+    sections:
+      - file: filter_transform_data/filter/index
+        sections:
+          - file: filter_transform_data/filter/basic_filters
+          - file: filter_transform_data/filter/compound_filters
+      - file: filter_transform_data/transform/index
+        sections:
+          - file: filter_transform_data/transform/basic_transforms
+          - file: filter_transform_data/transform/complex_transforms
+  - file: analyse_visualise_data/index
+    sections:
+      - file: analyse_visualise_data/analysis/index
+        sections:
+          - file: analyse_visualise_data/analysis/descriptive_statistics
+          - file: analyse_visualise_data/analysis/further_filtering
+          - file: analyse_visualise_data/analysis/comparative_statistics/index
+            sections:
+              - file: analyse_visualise_data/analysis/comparative_statistics/mann_whitney_u
+              - file: analyse_visualise_data/analysis/comparative_statistics/chi_square
+      - file: analyse_visualise_data/visualisation/index
+        sections:
+          - file: analyse_visualise_data/visualisation/numeric_data
+          - file: analyse_visualise_data/visualisation/categorical_data
+  - file: next/index

@@ -1,0 +1,25 @@
+
+paths:
+  
+    
+  - source: /etc/module-content/data/.tutorial
+    target: /home/ou/MetadataTutorial-3/.tutorial
+    overwrite: always
+    
+  
+    
+  - source: /etc/module-content/data
+    target: /home/ou/MetadataTutorial-3
+    overwrite: if-unchanged
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+

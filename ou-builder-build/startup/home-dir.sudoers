@@ -1,0 +1,1 @@
+ou ALL=(ALL:ALL) NOPASSWD:/bin/chown ou\:100 /home/ou/MetadataTutorial-3
